@@ -1,11 +1,10 @@
 tr{
-    width: 10%;
-    height: 10%;
+    width: 100%;
 }
 
 td{
-    width: 10%;
-    height: 10%;
+    width: 12.5%;
+    height: 100px;
 }
 
 tr:nth-child(2n) > td:nth-child(2n + 1){
@@ -18,10 +17,15 @@ tr:nth-child(2n + 1) > td:nth-child(2n){
 
 img{
     width: 100%;
-    height: auto;
+    height: 95%;
 }
 
 #table{
-    width:500px;
-    height: 500px;
+    border-spacing: 0;
+    width:800px;
+    height: 800px;
+}
+table{
+    width: 100%;
+    border-spacing: 0px;
 }
