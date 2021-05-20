@@ -16,6 +16,7 @@ constructor(private webSocketService: WebSocketService){
 
   ngOnInit() {
     this.webSocketService.listen('testEvent').subscribe((data) => {
+      console.log("moin");
     });
     init();
   }
@@ -29,17 +30,23 @@ function init() {
     const element = droppableElements[index];
     element.addEventListener("dragover", dragOver);
     element.addEventListener("drop", dragDrop);
-
+    element.addEventListener("dragend", dragEnd)
   }
   for (let index = 0; index < draggableElements.length; index++) {
     const element = draggableElements[index];
     element.addEventListener("dragstart", dragStart);
   }
 }
+function dragEnd(event :any) {
+  var e = event as DragEvent;
+  const target = e.target as HTMLElement;
+  target.classList.remove('dragging');
+}
 
 function dragStart(event : any){
   var e = event as DragEvent;
   const target = e.target as HTMLElement;
+  target.classList.add('dragging');
   e.dataTransfer?.setData("text", target.id);
 }
 
@@ -49,11 +56,11 @@ function dragOver(event : any) {
 }
 
 function dragDrop(event : any){
-  console.log("event fired")
   var e = event as DragEvent;
   const target =  e.target as HTMLElement;
-  
   var data : string = e.dataTransfer?.getData("text") as string;
+  const dropPiece = document.getElementById(data);
+
   if(target.id == data){
     return;
   }
