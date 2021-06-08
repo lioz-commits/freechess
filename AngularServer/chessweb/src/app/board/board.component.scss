@@ -1,0 +1,17 @@
+app-board-piece{
+    
+    height: 12.5%;
+    width: 12.5%;
+    background-color: green;
+}
+
+app-board-piece:nth-child(2n) > app-board:nth-child(2n + 1){
+    background-color: brown;
+}
+app-board-piece:nth-child(2n + 1) > app-board:nth-child(2n){
+    background-color: brown;
+}
+#table{
+    width:500px;
+    height: 500px;
+}

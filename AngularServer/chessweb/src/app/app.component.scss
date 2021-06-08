@@ -1,27 +1,15 @@
-tr{
-    width: 10%;
-    height: 10%;
+li{
+    width: 20%;
 }
-
-td{
-    width: 10%;
-    height: 10%;
+.eins{
+    background-color: green;
 }
-
-tr:nth-child(2n) > td:nth-child(2n + 1){
-    background-color: brown;
+.zwei{
+    background-color: hotpink;
 }
-tr:nth-child(2n + 1) > td:nth-child(2n){
-    background-color: brown;
-}
-
-
-img{
-    width: 100%;
-    height: auto;
-}
-
-#table{
-    width:500px;
-    height: 500px;
+ol{
+    background-color: blue;
+    list-style: none;
+    flex-direction: row;
+    align-content: center;
 }
